@@ -1,0 +1,44 @@
+nav {
+  background-color: colors(main-bg-color);
+  color: colors(main-text-white);
+  display: flex;
+  padding: 5px 10px;
+  height: 70px;
+
+  .logo {
+    padding: 5px 10px 0 10px;
+    cursor: pointer;
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  .menu {
+    margin-left: auto;
+
+    ul {
+      list-style-type: none;
+
+      margin: 20px 0px;
+    }
+
+    li {
+      display: inline-block;
+    }
+    a {
+      color: colors(main-text-white);
+      text-decoration: none;
+      font-size: 16px;
+      padding: 0 20px;
+      transition: color 650ms;
+      &:hover,
+      &:active:hover {
+        color: colors(main-font-color);
+      }
+    }
+    .active {
+      color: colors(main-font-color);
+    }
+  }
+}

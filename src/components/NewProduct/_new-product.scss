@@ -1,0 +1,41 @@
+.new-product {
+  padding: 100px 50px 50px 50px;
+  animation: fallDown 500ms ease-in-out;
+  width: 100%;
+
+  .new-product-form {
+    width: 100%;
+    padding: 20px 20px 10px 20px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+  }
+  .new-product-inputs {
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 5px 0;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+    textarea {
+      height: 200px;
+      max-width: 100%;
+    }
+  }
+
+  .new-product-btn {
+    text-align: right;
+    margin: 10px 0;
+
+    button {
+      background-color: colors(products-bg-color);
+      color: white;
+      padding: 12px 50px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  }
+}

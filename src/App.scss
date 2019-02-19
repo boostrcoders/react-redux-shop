@@ -1,0 +1,37 @@
+@import "config";
+@import "./components/HeaderNav/header-nav";
+@import "./components/NewProduct/new-product";
+@import "./components/Products/products";
+@import "./components/Cart/cart";
+@import "./components/Error/error";
+
+*,
+body,
+html {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: $sec-font-family;
+}
+body {
+  // background-color: lighten(colors(main-bg-color), 40);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+}
+footer {
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 998;
+  width: 100%;
+  background-color: colors(main-bg-color);
+  text-align: center;
+  color: colors(main-text-white);
+}
