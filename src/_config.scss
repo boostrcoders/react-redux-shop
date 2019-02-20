@@ -9,7 +9,11 @@ $colors: (
   main-font-dark-gray: #4d4d4d,
   main-bg-color: #141414,
   products-bg-color: #d34410,
-  new-product-bg-color: #4d4d4d
+  new-product-bg-color: #4d4d4d,
+  alert-red: #f44336,
+  alert-green: #4caf50,
+  alert-blue: #2196f3,
+  alert-orange: #ff9800
 );
 
 // Map into colors variable
@@ -55,7 +59,7 @@ $sec-font-family: "Roboto", sans-serif;
 }
 @keyframes fadeIn {
   0% {
-    transform: scale(2);
+    transform: scale(0);
     opacity: 0;
   }
   100% {
@@ -65,7 +69,7 @@ $sec-font-family: "Roboto", sans-serif;
 }
 @keyframes fadeUp {
   0% {
-    transform: translateY(4rem);
+    transform: translateY(-4rem);
     opacity: 0;
   }
   100% {

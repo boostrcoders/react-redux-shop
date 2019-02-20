@@ -3,6 +3,12 @@ import React from "react";
 const NewProduct = props => {
   return (
     <div className="new-product">
+      <div className="alert">
+        <span className="closebtn" onClick={props.closeAlert}>
+          &times;
+        </span>
+        <span className="message" />
+      </div>
       <form className="new-product-form" onSubmit={props.formSubmitted}>
         <div className="new-product-inputs">
           <div className="name-input">
@@ -10,17 +16,17 @@ const NewProduct = props => {
               name="name"
               placeholder="Name"
               onChange={props.newProductChange}
-              required
               value={props.newName}
             />
           </div>
 
           <div className="price-input">
             <input
+              type="number"
+              min="0"
               name="price"
               placeholder="Price"
               onChange={props.newProductChange}
-              required
               value={props.newPrice}
             />
           </div>

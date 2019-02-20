@@ -80,6 +80,7 @@ class ShopCart extends Component {
     newPrice: "",
     newDetails: ""
   };
+
   newProductChange(event) {
     let newUpdate;
     if (event.target.name === "name") {
@@ -91,24 +92,67 @@ class ShopCart extends Component {
     }
     this.setState(newUpdate);
   }
+
   formSubmitted(event) {
     event.preventDefault();
-    this.setState({
-      products: [
-        ...this.state.products,
-        {
-          name: this.state.newName,
-          price: this.state.newPrice,
-          cart: [false, 0],
-          favorite: [false, 0],
-          details: this.state.newDetails
-        }
-      ],
-      newName: "",
-      newPrice: "",
-      newDetails: ""
-    });
+
+    if (this.state.newName === "") {
+      this.alertDanger("name");
+    } else if (this.state.newPrice === "") {
+      this.alertDanger("price");
+    } else if (this.state.newDetails === "") {
+      this.alertDanger("details");
+    } else {
+      this.setState({
+        products: [
+          ...this.state.products,
+          {
+            name: this.state.newName,
+            price: this.state.newPrice,
+            cart: [false, 0],
+            favorite: [false, 0],
+            details: this.state.newDetails
+          }
+        ],
+        newName: "",
+        newPrice: "",
+        newDetails: "",
+        alertMessage: ""
+      });
+      this.alertSuccesful(this.state.newName);
+    }
   }
+
+  alertDanger(forInput) {
+    let alert = document.querySelector(".new-product .alert");
+    let message = document.querySelector(".message");
+    alert.style.display = "block";
+    alert.classList.add("danger");
+    alert.style.opacity = "1";
+    alert.classList.remove("success");
+    message.textContent = `Please input a product ${forInput}!!!`;
+    setTimeout(() => this.closeAlert(), 3000);
+  }
+
+  alertSuccesful(productName) {
+    let alert = document.querySelector(".new-product .alert");
+    let message = document.querySelector(".message");
+    alert.style.display = "block";
+    alert.style.opacity = "1";
+    alert.classList.add("success");
+    alert.classList.remove("danger");
+    message.textContent = `Adding ${productName} in Store is succesful.`;
+    setTimeout(() => this.closeAlert(), 3000);
+  }
+
+  closeAlert = () => {
+    let alert = document.querySelector(".new-product .alert");
+    alert.style.opacity = "0";
+    setTimeout(function() {
+      alert.style.display = "none";
+      alert.classList.remove("danger", "success");
+    }, 600);
+  };
 
   render() {
     return (
@@ -142,6 +186,7 @@ class ShopCart extends Component {
                     newName={this.state.newName}
                     newPrice={this.state.newPrice}
                     newDetails={this.state.newDetails}
+                    closeAlert={this.closeAlert}
                   />
                 )}
               />

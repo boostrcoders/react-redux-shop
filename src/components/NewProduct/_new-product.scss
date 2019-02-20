@@ -38,4 +38,35 @@
       cursor: pointer;
     }
   }
+
+  .alert {
+    padding: 20px;
+    display: none;
+    color: white;
+    margin-bottom: 15px;
+    transition: opacity 600ms;
+  }
+  .danger {
+    animation: fadeUp 500ms ease-in-out;
+    background-color: colors(alert-red);
+  }
+  .success {
+    animation: fadeIn 500ms ease-in-out;
+    background-color: colors(alert-green);
+  }
+
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .closebtn:hover {
+    color: colors(main-font-dark-gray);
+  }
 }
