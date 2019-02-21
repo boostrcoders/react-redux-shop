@@ -47,6 +47,16 @@ $sec-font-family: "Roboto", sans-serif;
     display: none;
   }
 }
+@keyframes slideUp {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 @keyframes fallDown {
   0% {
     transform: translateY(-100vh);
@@ -57,6 +67,7 @@ $sec-font-family: "Roboto", sans-serif;
     opacity: 1;
   }
 }
+
 @keyframes fadeIn {
   0% {
     transform: scale(0);
@@ -69,11 +80,11 @@ $sec-font-family: "Roboto", sans-serif;
 }
 @keyframes fadeUp {
   0% {
-    transform: translateY(-4rem);
+    transform: scale(2);
     opacity: 0;
   }
   100% {
-    transform: translateY(0);
+    transform: scale(1);
     opacity: 1;
   }
 }

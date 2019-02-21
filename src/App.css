@@ -55,6 +55,32 @@
   }
 }
 
+@-webkit-keyframes slideUp {
+  0% {
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 @-webkit-keyframes fallDown {
   0% {
     -webkit-transform: translateY(-100vh);
@@ -109,26 +135,26 @@
 
 @-webkit-keyframes fadeUp {
   0% {
-    -webkit-transform: translateY(-4rem);
-            transform: translateY(-4rem);
+    -webkit-transform: scale(2);
+            transform: scale(2);
     opacity: 0;
   }
   100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    -webkit-transform: scale(1);
+            transform: scale(1);
     opacity: 1;
   }
 }
 
 @keyframes fadeUp {
   0% {
-    -webkit-transform: translateY(-4rem);
-            transform: translateY(-4rem);
+    -webkit-transform: scale(2);
+            transform: scale(2);
     opacity: 0;
   }
   100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    -webkit-transform: scale(1);
+            transform: scale(1);
     opacity: 1;
   }
 }
@@ -203,16 +229,53 @@ nav .menu .active {
 
 .new-product {
   padding: 100px 50px 50px 50px;
-  -webkit-animation: fallDown 500ms ease-in-out;
-          animation: fallDown 500ms ease-in-out;
   width: 100%;
+}
+
+.new-product h1 {
+  font-family: "Great Vibes", cursive;
+  margin: 10px auto;
+  width: 383px;
+  letter-spacing: 5px;
+  font-size: 40px;
+  line-height: 1;
+  position: relative;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+  -webkit-animation: fadeUp 1000ms forwards;
+          animation: fadeUp 1000ms forwards;
+}
+
+.new-product h1::before, .new-product h1::after {
+  content: "";
+  width: 50px;
+  height: 3px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  position: absolute;
+  background-color: #d34410;
+  border-radius: 8px;
+}
+
+.new-product h1::before {
+  left: -70px;
+}
+
+.new-product h1::after {
+  right: -70px;
 }
 
 .new-product .new-product-form {
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px 20px 10px 20px;
   border-radius: 5px;
   background-color: #f2f2f2;
+  -webkit-animation: slideUp 1000ms forwards;
+          animation: slideUp 1000ms forwards;
 }
 
 .new-product .new-product-inputs input,
@@ -254,8 +317,8 @@ nav .menu .active {
 }
 
 .new-product .danger {
-  -webkit-animation: fadeUp 500ms ease-in-out;
-          animation: fadeUp 500ms ease-in-out;
+  -webkit-animation: slideUp 500ms ease-in-out;
+          animation: slideUp 500ms ease-in-out;
   background-color: #f44336;
 }
 
@@ -283,13 +346,97 @@ nav .menu .active {
 
 .products {
   width: 100%;
-  padding: 100px 50px 50px 50px;
-  -webkit-animation: fallDown 500ms ease-in-out;
-          animation: fallDown 500ms ease-in-out;
+  padding: 100px 10px 50px 10px;
+  color: #141414;
 }
 
 .products h1 {
+  font-family: "Great Vibes", cursive;
+  margin: 10px auto;
+  width: 100px;
+  letter-spacing: 5px;
+  font-size: 40px;
+  line-height: 1;
+  position: relative;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+  -webkit-animation: fadeUp 1000ms forwards;
+          animation: fadeUp 1000ms forwards;
+}
+
+.products h1::before, .products h1::after {
+  content: "";
+  width: 50px;
+  height: 3px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  position: absolute;
+  background-color: #d34410;
+  border-radius: 8px;
+}
+
+.products h1::before {
+  left: -70px;
+}
+
+.products h1::after {
+  right: -70px;
+}
+
+.products-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.item {
+  padding: 10px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 300px;
+          flex: 1 300px;
+}
+
+.item .card {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 100%;
   text-align: center;
+  font-family: arial;
+}
+
+.item h3 {
+  padding: 10px;
+}
+
+.item .price {
+  color: grey;
+  font-size: 22px;
+}
+
+.item .card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  margin-top: 10px;
+  color: white;
+  background-color: #d34410;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.item .card button:hover {
+  opacity: 0.7;
 }
 
 .error {
@@ -308,6 +455,10 @@ html {
   padding: 0;
   margin: 0;
   font-family: "Roboto", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 header {

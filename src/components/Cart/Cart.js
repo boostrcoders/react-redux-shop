@@ -5,9 +5,11 @@ const Cart = props => {
   return (
     <div className="products">
       <h1>Cart</h1>
-      {props.products.map((product, key) => {
-        return <ProductItem key={key} name={product.name} />;
-      })}
+      <div className="products-list">
+        {props.products.map((product, key) => {
+          return <ProductItem key={key} id={key} product={product} />;
+        })}
+      </div>
     </div>
   );
 };

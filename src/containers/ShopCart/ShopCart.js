@@ -83,7 +83,7 @@ class ShopCart extends Component {
 
   newProductChange(event) {
     let newUpdate;
-    if (event.target.name === "name") {
+    if (event.target.name === "name" || event.target.name === null) {
       newUpdate = { newName: event.target.value };
     } else if (event.target.name === "price") {
       newUpdate = { newPrice: event.target.value };
@@ -147,11 +147,13 @@ class ShopCart extends Component {
 
   closeAlert = () => {
     let alert = document.querySelector(".new-product .alert");
-    alert.style.opacity = "0";
-    setTimeout(function() {
-      alert.style.display = "none";
-      alert.classList.remove("danger", "success");
-    }, 600);
+    if (alert !== null) {
+      alert.style.opacity = "0";
+      setTimeout(function() {
+        alert.style.display = "none";
+        alert.classList.remove("danger", "success");
+      }, 600);
+    }
   };
 
   render() {

@@ -3,6 +3,7 @@ import React from "react";
 const NewProduct = props => {
   return (
     <div className="new-product">
+      <h1>Create New Product</h1>
       <div className="alert">
         <span className="closebtn" onClick={props.closeAlert}>
           &times;
