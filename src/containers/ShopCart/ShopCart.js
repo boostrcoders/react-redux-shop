@@ -3,7 +3,9 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import HeaderNav from "../../components/HeaderNav/HeaderNav";
 import NewProduct from "../../components/NewProduct/NewProduct";
 import Products from "../../components/Products/Products";
-import Cart from "../../components/Cart/Cart";
+import Cart from "../../components/Products/Cart";
+import ItemPage from "../../components/Products/ItemPage";
+
 import Error from "../../components/Error/Error";
 
 //CHECK if Products is exist in Local Storage
@@ -159,7 +161,7 @@ class ShopCart extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div>
+        <div className="bg-image">
           <header>
             <HeaderNav />
           </header>
@@ -171,9 +173,14 @@ class ShopCart extends Component {
                 exact
               />
               <Route
+                path="/store/:id"
+                component={props => <ItemPage product={this.state.products} />}
+              />
+              <Route
                 path="/store"
                 render={props => <Products products={this.state.products} />}
               />
+
               <Route
                 path="/cart"
                 render={props => <Cart products={this.state.products} />}
@@ -195,7 +202,7 @@ class ShopCart extends Component {
               <Route component={Error} />
             </Switch>
           </main>
-          <footer>Footer</footer>
+          <footer>myShoppingCart.com</footer>
         </div>
       </BrowserRouter>
     );

@@ -7,8 +7,9 @@ $colors: (
   main-font-color: #d34410,
   main-text-white: #fff,
   main-font-dark-gray: #4d4d4d,
-  main-bg-color: #141414,
+  main-bg-color: rgba(20, 20, 20, 0.9),
   products-bg-color: #d34410,
+  cart-bg-color: rgba(255, 255, 255, 0.8),
   new-product-bg-color: #4d4d4d,
   alert-red: #f44336,
   alert-green: #4caf50,
@@ -71,11 +72,12 @@ $sec-font-family: "Roboto", sans-serif;
 @keyframes fadeIn {
   0% {
     transform: scale(0);
-    opacity: 0;
+  }
+  30% {
+    transform: scale(1.03);
   }
   100% {
     transform: scale(1);
-    opacity: 1;
   }
 }
 @keyframes fadeUp {

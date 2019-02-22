@@ -13,9 +13,11 @@ html {
   margin: 0;
   font-family: $sec-font-family;
 }
+
 body {
   // background-color: lighten(colors(main-bg-color), 40);
   overflow-x: hidden;
+  height: 100%;
 }
 
 header {
@@ -25,13 +27,28 @@ header {
   z-index: 999;
   width: 100%;
 }
+.bg-image {
+  position: relative;
+}
+.bg-image::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(./assets/shop-bg.jpeg) no-repeat center fixed;
+  background-size: cover;
+  filter: blur(4px);
+}
 footer {
-  height: 50px;
+  padding: 20px;
   position: fixed;
   bottom: 0;
   left: 0;
   z-index: 998;
   width: 100%;
+  font-size: 12px;
   background-color: colors(main-bg-color);
   text-align: center;
   color: colors(main-text-white);
