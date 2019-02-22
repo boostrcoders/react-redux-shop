@@ -1,11 +1,10 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ItemPage = ({ link }) => (
-  <NavLink to={`/cart`}>
+  <Link to={`/store/${link}`}>
     <span className="recipe-button">View Item</span>
-    {console.log("Itempage")}
-  </NavLink>
+  </Link>
 );
 
 const ProductItem = props => {

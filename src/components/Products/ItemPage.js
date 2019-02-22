@@ -1,18 +1,29 @@
 import React from "react";
 
-const ItemPage = props => {
-  const { id } = this.props.match.params;
-  const { name, price, details } = props.product[id];
-  console.log("itempage");
+class ItemPage extends React.Component {
+  state = {
+    activeProduct: []
+  };
+  componentDidMount() {
+    const { id } = this.props.match.params;
+    console.log(id);
 
-  return (
-    <div className="item">
-      <div className="card">
-        <h3>{name}</h3>
-        <p className="price">${price}</p>
-        <p>${details}</p>
+    this.setState({
+      activeProduct: id
+    });
+  }
+
+  render() {
+    // const { name, price, id } = this.state.activeProduct;
+    return (
+      <div className="item">
+        <div className="card">
+          {/* <h3>{name}</h3>
+          <p className="price">${price}</p> */}
+          <p>${this.state.activeProduct}</p>
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 export default ItemPage;

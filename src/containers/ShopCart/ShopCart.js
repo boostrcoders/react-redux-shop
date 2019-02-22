@@ -174,7 +174,7 @@ class ShopCart extends Component {
               />
               <Route
                 path="/store/:id"
-                component={props => <ItemPage product={this.state.products} />}
+                render={props => <ItemPage product={this.state.products} />}
               />
               <Route
                 path="/store"
