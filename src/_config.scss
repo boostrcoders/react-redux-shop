@@ -51,11 +51,9 @@ $sec-font-family: "Roboto", sans-serif;
 @keyframes slideUp {
   0% {
     transform: translateY(100px);
-    opacity: 0;
   }
   100% {
     transform: translateY(0);
-    opacity: 1;
   }
 }
 @keyframes fallDown {

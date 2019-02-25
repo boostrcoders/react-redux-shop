@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ItemPage = ({ link }) => (
+const PageNumber = ({ link, product }) => (
   <Link to={`/store/${link}`}>
-    <span className="recipe-button">View Item</span>
+    <h3>{product.name}</h3>
+    <p className="price">${product.price}</p>
   </Link>
 );
 
 const ProductItem = props => {
-  const { name, price } = props.product;
   let delay = props.id + 1;
   let style = {
     animation: "fadeIn " + delay * 800 + "ms forwards"
@@ -17,10 +17,7 @@ const ProductItem = props => {
   return (
     <div className="item">
       <div className="card" style={style}>
-        <h3>{name}</h3>
-        <p className="price">${price}</p>
-        <ItemPage link={props.id} />
-
+        <PageNumber link={props.id} product={props.product} />
         <button>Add to Cart</button>
       </div>
     </div>

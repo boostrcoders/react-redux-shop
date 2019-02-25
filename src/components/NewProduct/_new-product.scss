@@ -76,14 +76,14 @@
     display: none;
     color: white;
     margin-bottom: 15px;
-    transition: opacity 600ms;
+    transition: opacity 500ms;
   }
   .danger {
-    animation: slideUp 500ms ease-in-out;
+    animation: slideUp 500ms forwards;
     background-color: colors(alert-red);
   }
   .success {
-    animation: fadeIn 500ms ease-in-out;
+    animation: fadeIn 500ms forwards;
     background-color: colors(alert-green);
   }
 
