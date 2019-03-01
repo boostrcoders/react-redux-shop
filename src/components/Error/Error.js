@@ -1,9 +1,10 @@
 import React from "react";
+import MyEditor from "../../containers/TextEditor/TextEditor";
 
 const Error = () => {
   return (
     <div className="error">
-      <p>Error: Path does not exist</p>
+      <MyEditor />
     </div>
   );
 };

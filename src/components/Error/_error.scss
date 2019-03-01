@@ -1,6 +1,21 @@
 .error {
-  height: calc(100vh - 20px);
-  padding: 100px 50px 50px 50px;
-  background-color: colors(new-product-bg-color);
-  animation: fallDown 500ms ease-in-out;
+  height: calc(100vh - 160px);
+  margin: 100px 50px 0px 50px;
+  // background-color: colors(new-product-bg-color);
+  // animation: fallDown 500ms ease-in-out;
+
+  border: 1px solid;
+  padding: 20px;
+}
+.input-box {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+.richutils-btn {
+  width: 25px;
+  height: 25px;
 }

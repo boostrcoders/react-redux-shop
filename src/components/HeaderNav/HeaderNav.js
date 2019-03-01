@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/mylogo2.png";
+
 import { NavLink } from "react-router-dom";
 
 const HeaderNav = props => {
@@ -8,7 +8,7 @@ const HeaderNav = props => {
       <nav>
         <div className="logo">
           <NavLink to="/">
-            <img src={logo} alt="JM" />
+            <img src="/assets/mylogo2.png" alt="JM" />
           </NavLink>
         </div>
         <div className="menu">

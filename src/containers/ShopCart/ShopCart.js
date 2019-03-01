@@ -5,6 +5,7 @@ import NewProduct from "../../components/NewProduct/NewProduct";
 import Products from "../../components/Products/Products";
 import Cart from "../../components/Products/Cart";
 import ItemPage from "../../components/Products/ItemPage";
+import BreadCrumbs from "../../components/Products/BreadCrumbs";
 import Error from "../../components/Error/Error";
 
 //CHECK if Products is exist in Local Storage
@@ -12,15 +13,33 @@ if ("products" in localStorage) {
 } else {
   const products = [
     {
+      productId: 0,
       name: "iPad",
+      picture: [
+        "/assets/ipad1.jpeg",
+        "/assets/ipad2.jpeg",
+        "/assets/ipad3.jpeg",
+        "/assets/ipad4.jpeg"
+      ],
+      defaultPic: 0,
+      activePic: 0,
       price: 200,
       cart: [false, 0],
       favorite: [true, 1],
       details:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
+      productId: 1,
       name: "iPhone",
+      picture: [
+        "/assets/iphone1.jpeg",
+        "/assets/iphone2.jpeg",
+        "/assets/iphone3.png",
+        "/assets/iphone4.jpeg"
+      ],
+      defaultPic: 0,
+      activePic: 0,
       price: 650,
       cart: [false, 0],
       favorite: [false, 0],
@@ -29,6 +48,7 @@ if ("products" in localStorage) {
     },
     {
       name: "Cherry Mobile",
+      picture: ["/assets/placeholder.png"],
       price: "20",
       cart: [false, 0],
       favorite: [false, 0],
@@ -37,6 +57,7 @@ if ("products" in localStorage) {
     },
     {
       name: "Lenovo",
+      picture: ["/assets/placeholder.png"],
       price: "100",
       cart: [false, 0],
       favorite: [false, 0],
@@ -45,6 +66,7 @@ if ("products" in localStorage) {
     },
     {
       name: "Samsung",
+      picture: ["/assets/placeholder.png"],
       price: "250",
       cart: [false, 0],
       favorite: [false, 0],
@@ -53,6 +75,7 @@ if ("products" in localStorage) {
     },
     {
       name: "LG",
+      picture: ["/assets/placeholder.png"],
       price: "150",
       cart: [false, 0],
       favorite: [false, 0],
@@ -61,6 +84,7 @@ if ("products" in localStorage) {
     },
     {
       name: "ViVo",
+      picture: ["/assets/placeholder.png"],
       price: "80",
       cart: [false, 0],
       favorite: [false, 0],
@@ -69,6 +93,7 @@ if ("products" in localStorage) {
     },
     {
       name: "OPPO",
+      picture: ["/assets/placeholder.png"],
       price: "70",
       cart: [false, 0],
       favorite: [false, 0],
@@ -164,6 +189,13 @@ class ShopCart extends Component {
       }, 500);
     }
   };
+  changeActivePic = e => {
+    let products = [...this.state.products];
+    products[e.target.attributes[2].nodeValue].activePic = e.target.id;
+
+    this.setState(products);
+    console.log(e.target.id);
+  };
 
   render() {
     return (
@@ -173,19 +205,23 @@ class ShopCart extends Component {
             <HeaderNav />
           </header>
           <main>
+            <BreadCrumbs />
             <Switch>
-              <Route
-                path="/store/:id"
-                render={props => (
-                  <ItemPage {...props} products={this.state.products} />
-                )}
-              />
               <Route
                 path="/"
                 render={props => <Products products={this.state.products} />}
                 exact
               />
-
+              <Route
+                path="/store/:id"
+                render={props => (
+                  <ItemPage
+                    {...props}
+                    products={this.state.products}
+                    changeActivePic={this.changeActivePic}
+                  />
+                )}
+              />
               <Route
                 path="/store"
                 render={props => <Products products={this.state.products} />}
@@ -209,6 +245,7 @@ class ShopCart extends Component {
                   />
                 )}
               />
+
               <Route component={Error} />
             </Switch>
           </main>

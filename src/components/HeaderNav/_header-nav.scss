@@ -1,9 +1,10 @@
 nav {
-  background-color: colors(main-bg-color);
   color: colors(main-text-white);
   display: flex;
   padding: 5px 10px;
   height: 70px;
+  max-width: 1200px;
+  margin: 0px auto;
 
   .logo {
     padding: 5px 10px 0 10px;
