@@ -25,7 +25,7 @@ if ("products" in localStorage) {
       activePic: 0,
       price: 200,
       cart: [false, 0],
-      favorite: [true, 1],
+      favorite: [false, 1],
       details:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
@@ -47,8 +47,12 @@ if ("products" in localStorage) {
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
+      productId: 2,
       name: "Cherry Mobile",
       picture: ["/assets/placeholder.png"],
+
+      defaultPic: 0,
+      activePic: 0,
       price: "20",
       cart: [false, 0],
       favorite: [false, 0],
@@ -56,8 +60,11 @@ if ("products" in localStorage) {
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
+      productId: 3,
       name: "Lenovo",
       picture: ["/assets/placeholder.png"],
+      defaultPic: 0,
+      activePic: 0,
       price: "100",
       cart: [false, 0],
       favorite: [false, 0],
@@ -65,8 +72,11 @@ if ("products" in localStorage) {
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
+      productId: 4,
       name: "Samsung",
       picture: ["/assets/placeholder.png"],
+      defaultPic: 0,
+      activePic: 0,
       price: "250",
       cart: [false, 0],
       favorite: [false, 0],
@@ -74,8 +84,11 @@ if ("products" in localStorage) {
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
+      productId: 5,
       name: "LG",
       picture: ["/assets/placeholder.png"],
+      defaultPic: 0,
+      activePic: 0,
       price: "150",
       cart: [false, 0],
       favorite: [false, 0],
@@ -83,8 +96,11 @@ if ("products" in localStorage) {
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
+      productId: 6,
       name: "ViVo",
       picture: ["/assets/placeholder.png"],
+      defaultPic: 0,
+      activePic: 0,
       price: "80",
       cart: [false, 0],
       favorite: [false, 0],
@@ -92,8 +108,11 @@ if ("products" in localStorage) {
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
+      productId: 7,
       name: "OPPO",
       picture: ["/assets/placeholder.png"],
+      defaultPic: 0,
+      activePic: 0,
       price: "70",
       cart: [false, 0],
       favorite: [false, 0],
@@ -191,10 +210,11 @@ class ShopCart extends Component {
   };
   changeActivePic = e => {
     let products = [...this.state.products];
-    products[e.target.attributes[2].nodeValue].activePic = e.target.id;
+    products[e.target.attributes[1].value].activePic = e.target.id;
 
     this.setState(products);
-    console.log(e.target.id);
+    console.log(e.target);
+    console.log(products);
   };
 
   render() {

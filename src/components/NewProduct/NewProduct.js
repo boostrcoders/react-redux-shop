@@ -3,14 +3,14 @@ import React from "react";
 const NewProduct = props => {
   return (
     <div className="new-product">
-      <h1>Create New Product</h1>
-      <div className="alert">
-        <span className="closebtn" onClick={props.closeAlert}>
-          &times;
-        </span>
-        <span className="message" />
-      </div>
       <form className="new-product-form" onSubmit={props.formSubmitted}>
+        <h1>Create New Product</h1>
+        <div className="alert">
+          <span className="closebtn" onClick={props.closeAlert}>
+            &times;
+          </span>
+          <span className="message" />
+        </div>
         <div className="new-product-inputs">
           <div className="name-input">
             <input

@@ -11,13 +11,11 @@ const ProductThumbnail = props => {
   return (
     <div
       className="thumbnails-item"
-      id={props.id}
       pid={props.pid}
+      id={props.id}
       style={style}
       onClick={props.changeActivePic}
-    >
-      <div className={props.activePic !== props.id ? "" : "active"} />
-    </div>
+    />
   );
 };
 export default ProductThumbnail;

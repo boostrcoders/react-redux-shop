@@ -2,6 +2,7 @@ import React from "react";
 import Error from "../../components/Error/Error";
 import ProductThumbnail from "./ProductThumbnail";
 import ProductImage from "./ProductImage";
+import PrevNext from "./PrevNext";
 const ItemPage = props => {
   const { id } = props.match.params;
 
@@ -48,6 +49,7 @@ const ItemPage = props => {
                   pid={productId}
                   activePic={activePic}
                   picture={picture}
+                  pictureslength={props.products[id].picture.length}
                   changeActivePic={props.changeActivePic}
                 />
               );
@@ -59,6 +61,14 @@ const ItemPage = props => {
             <button className="product-btn">Add to Cart</button>
           </div>
         </div>
+      </div>
+      <div className="product-prevnext">
+        <PrevNext
+          products={props.products}
+          activeProduct={id}
+          pid={productId}
+          length={props.products.length}
+        />
       </div>
     </div>
   );
