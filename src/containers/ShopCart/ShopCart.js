@@ -6,6 +6,7 @@ import Products from "../../components/Products/Products";
 import Cart from "../../components/Products/Cart";
 import ItemPage from "../../components/Products/ItemPage";
 import BreadCrumbs from "../../components/Products/BreadCrumbs";
+
 import Error from "../../components/Error/Error";
 
 //CHECK if Products is exist in Local Storage
@@ -136,14 +137,18 @@ class ShopCart extends Component {
 
   newProductChange(event) {
     let newUpdate;
-    if (event.target.name === "name" || event.target.name === null) {
-      newUpdate = { newName: event.target.value };
-    } else if (event.target.name === "price") {
-      newUpdate = { newPrice: event.target.value };
-    } else {
-      newUpdate = { newDetails: event.target.value };
-    }
-    this.setState(newUpdate);
+    console.log(event.sender);
+    // if (
+    //   event.sender.config.name === "name" ||
+    //   event.sender.config.name === null
+    // ) {
+    //   newUpdate = { newName: event.target.value };
+    // } else if (event.sender.config.name === "price") {
+    //   newUpdate = { newPrice: event.target.value };
+    // } else {
+    //   newUpdate = { newDetails: event.target.value };
+    // }
+    // this.setState(newUpdate);
   }
 
   formSubmitted(event) {

@@ -14,6 +14,7 @@
     width: 80%;
     margin: 0 auto;
     align-items: center;
+    color: colors(main-text-white);
     &::before,
     &::after {
       content: "";
@@ -32,18 +33,25 @@
     margin: 0 auto;
     padding: 20px 20px 10px 20px;
     border-radius: 5px;
-    background-color: #f2f2f2;
+    background-color: colors(main-bg-color);
     animation: slideUp 1000ms forwards;
   }
   .new-product-inputs {
     input,
-    textarea {
+    textarea,
+    .name-input {
+      .input-box {
+        background-color: #fff;
+      }
+      font-size: 1rem;
       width: 100%;
       padding: 12px;
       margin: 5px 0;
-      border: 1px solid #cccccc;
+      border: 1px solid colors(cart-bg-color);
       border-radius: 4px;
       resize: vertical;
+      color: colors(main-font-color);
+      background-color: colors(main-bg-color);
     }
     textarea {
       height: 200px;
@@ -66,14 +74,16 @@
   }
 
   .alert {
-    padding: 20px;
+    padding: 10px;
     display: none;
     color: white;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     transition: opacity 500ms;
+    margin-top: -50px;
+    border-radius: 5px;
   }
   .danger {
-    animation: slideUp 500ms forwards;
+    animation: fallDown 500ms forwards;
     background-color: colors(alert-red);
   }
   .success {

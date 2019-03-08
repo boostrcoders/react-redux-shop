@@ -1,4 +1,5 @@
 import React from "react";
+import CKEditor from "ckeditor4-react";
 
 const NewProduct = props => {
   return (
@@ -11,13 +12,18 @@ const NewProduct = props => {
           </span>
           <span className="message" />
         </div>
+
         <div className="new-product-inputs">
+          <div />
           <div className="name-input">
-            <input
+            <CKEditor
+              className="input-box"
               name="name"
-              placeholder="Name"
+              data={props.newName}
               onChange={props.newProductChange}
-              value={props.newName}
+              defaultValue={props.newName}
+              type="inline"
+              config={{ name: "name" }}
             />
           </div>
 

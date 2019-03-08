@@ -7,7 +7,7 @@ $colors: (
   main-font-color: #d34410,
   main-text-white: #fff,
   main-font-dark-gray: #4d4d4d,
-  main-bg-color: rgba(20, 20, 20, 0.9),
+  main-bg-color: rgba(20, 20, 20, 0.8),
   products-bg-color: #d34410,
   cart-bg-color: rgba(255, 255, 255, 0.8),
   new-product-bg-color: #4d4d4d,
@@ -58,7 +58,7 @@ $sec-font-family: "Roboto", sans-serif;
 }
 @keyframes fallDown {
   0% {
-    transform: translateY(-100vh);
+    transform: translateY(-100px);
     opacity: 0;
   }
   100% {
